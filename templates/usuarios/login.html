@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block formularioIngreso %}
+<div id="login-page">
+	<div class="container">
+		<form class="form-login" id="formulario" method="post" action="">{% csrf_token %}
+			<h2 class="form-login-heading">INGRESO DEL SISTEMA</h2>
+			<div class="login-wrap">
+				<table>{{formulario}}</table>
+				<br>
+				<button class="btn btn-theme btn-block" type="submit">
+					<i class="fa fa-lock"></i>INGRESAR
+				</button>
+				<hr>
+			</div>
+
+			<!-- Modal -->
+			<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						{% if not autenticacion%}
+						<div class="modal-body">
+							<p>Usuario o contraseña incorrectos</p>
+						</div>
+						{% endif %}
+						<div class="modal-footer">
+							<button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+							<button class="btn btn-theme" type="button">Submit</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- modal -->
+
+		</form>	  	
+
+	</div>
+</div>
+{% endblock %}

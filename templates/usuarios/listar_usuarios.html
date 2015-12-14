@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="content-panel">
+	<table class="table tablestriped table-hover">
+		<h4>
+			<li class="fa fa-angle-circle">Usuarios</li>{% csrf_token %}
+		</h4>
+		<hr>
+		<thead>
+			<tr>
+				<th><i class="fa fa-user"></i>Nombres</th>
+				<th><i class="fa fa-adjunst"></i>Tipo</th>
+				<th><i class="fa fa-edit"></i>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for usuario in usuarios %}
+			<tr>
+				<td><a href="#">{{usuario.get_full_name}} </a></td>
+				<td><a href="#"></a>{{usuario.email}} </td>
+				<td><a href="#"></a> acciones </td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}
