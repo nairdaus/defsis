@@ -64,6 +64,7 @@ class Denuncia(models.Model):
 class PerfilPersona(models.Model):
 	activo = models.BooleanField()
 	f_creacion = models.DateField(auto_now_add=True)
+	f_modificacion = models.DateField(auto_now=True)
 	tipo = models.ForeignKey(Tipo)
 	persona = models.ForeignKey(Persona)	
 	usuario = models.ManyToManyField(User)

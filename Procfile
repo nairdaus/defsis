@@ -1,1 +1,1 @@
-web: gunicorn sidsecod.wsgi -b 0.0.0.0:$PORT
+web: gunicorn sidsecod.wsgi --log-file -
