@@ -53,3 +53,8 @@ def cerrar_sesion(request):
 def registrar_denuncia(request):
 	template = 'registrarDenuncia.html'
 	return render(request, template)
+
+@login_required(login_url = '/')
+def mis_casos(request):
+	template = 'misCasos.html'
+	return render(request, template)
