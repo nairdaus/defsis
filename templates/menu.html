@@ -1,5 +1,6 @@
 	<!--TOP BAR CONTENT & NOTIFICATIONS      -->
 	<!--header start-->
+	{% load static %}
 	<header class="header black-bg">
 		<div class="sidebar-toggle-box">
 			<div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
@@ -92,7 +93,7 @@
 						</li>
 						<li>
 							<a href="index.html#">
-								<span class="photo"><img alt="avatar" src="../static/img/ui-zac.jpg"></span>
+								<span class="photo"><img alt="avatar" src="{% static "img/ui-zac.jpg" %}"></span>
 								<span class="subject">
 								<span class="from">Zac Snider</span>
 								<span class="time">Just now</span>
@@ -104,7 +105,7 @@
 						</li>
 						<li>
 							<a href="index.html#">
-								<span class="photo"><img alt="avatar" src="../static/img/ui-divya.jpg"></span>
+								<span class="photo"><img alt="avatar" src="{% static "img/ui-divya.jpg"%}"></span>
 								<span class="subject">
 									<span class="from">Divya Manian</span>
 									<span class="time">40 mins.</span>
@@ -116,7 +117,7 @@
 						</li>
 						<li>
 							<a href="index.html#">
-								<span class="photo"><img alt="avatar" src="../static/img/ui-danro.jpg"></span>
+								<span class="photo"><img alt="avatar" src="{% static "img/ui-danro.jpg"%}"></span>
 								<span class="subject">
 									<span class="from">Dan Rogers</span>
 									<span class="time">2 hrs.</span>
@@ -128,7 +129,7 @@
 						</li>
 						<li>
 							<a href="index.html#">
-								<span class="photo"><img alt="avatar" src="../static/img/ui-sherman.jpg"></span>
+								<span class="photo"><img alt="avatar" src="{% static "img/ui-sherman.jpg"%}"></span>
 								<span class="subject">
 									<span class="from">Dj Sherman</span>
 									<span class="time">4 hrs.</span>
@@ -159,7 +160,7 @@
 		<!-- sidebar menu start-->
 			<ul class="sidebar-menu" id="nav-accordion">
 				<p class="centered">
-					<a href="profile.html"><img src="../static/img/ui-sam.jpg" class="img-circle" width="60"></a>
+					<a href="profile.html"><img src="{% static "img/ui-sam.jpg"%}" class="img-circle" width="60"></a>
 				</p>
 				<h5 class="centered">USER NAME</h5>
 
