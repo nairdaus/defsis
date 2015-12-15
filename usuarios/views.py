@@ -60,6 +60,12 @@ def mis_casos(request):
 	return render(request, template)
 
 @login_required(login_url = '/')
-def mis_casos(request):
-	template = 'verCasos.html'
+def registrar_actuaciones(request):
+	template = 'registrarActuaciones.html'
+	return render(request, template)
+
+
+@login_required(login_url = '/')
+def listado_casos(request):
+	template = 'listadoCasos.html'
 	return render(request, template)
