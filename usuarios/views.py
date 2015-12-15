@@ -16,9 +16,6 @@ def list_user_view(request):
 	template = 'usuarios/listar_usuarios.html'
 	return render(request, template, {'usuarios': usuarios})
 
-def edit_user_view(request):
-	return render()
-
 @csrf_exempt
 def login_view(request):
 	if request.method == 'POST':
@@ -47,6 +44,12 @@ def dashboard_view(request):
 def cerrar_sesion(request):
 	logout(request)
 	return HttpResponseRedirect('/')
+
+@login_required(login_url = '/')
+def edit_user_view(request, id_user):
+	usuario = User.objects.get(id = id_user)
+	template = 'usuarios/editar_usuario.html'
+	return render(request, template, {'usuario': usuario} )
 
 # Esta vista es de prueba, y debe ser trasladada al modulo "denuncias"
 @login_required(login_url = '/')
