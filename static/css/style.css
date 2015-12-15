@@ -363,7 +363,7 @@ ul.sidebar-menu li a{
 }
 
 ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #68dff0;
+    background: #f5d66d;
     color: #fff;
     display: block;
 
