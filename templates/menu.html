@@ -183,7 +183,7 @@
 
 				<li class="sub-menu">
 					<a href="javascript:;" >
-						<i class="fa fa-cogs"></i>
+						<i class="fa fa-exchange"></i>
 						<span>Mis Casos</span>
 					</a>
 				</li>
@@ -194,13 +194,26 @@
 						<span>Usuarios</span>
 					</a>
 					<ul class="sub">
-						<li class="active"><a  href="{% url 'listar_user_view' %}">Gestion de Usuarios</a></li>
+						<li ><a  href="{% url 'listar_user_view' %}">Gestion de Usuarios</a></li>
 					</ul>
 					<ul class="sub">
-						<li class="active"><a  href="{% url 'listar_user_view' %}">Agregar de Usuarios</a></li>
+						<li c><a  href="{% url 'create_user_view' %}">Agregar de Usuarios</a></li>
 					</ul>
 				</li>
-				
+				<li class="sub-menu">
+					<a  href="javascript:;" >
+						<i class="fa fa-cogs"></i>
+						<span>Administracion</span>
+					</a>
+					<ul class="sub">
+						<li ><a  href="{% url 'listar_user_view' %}">Defensorias</a></li>
+					</ul>
+					<ul class="sub">
+						<li ><a  href="{% url 'create_user_view' %}">Estados</a></li>
+					</ul><ul class="sub">
+						<li ><a  href="{% url 'create_user_view' %}">Tipologias</a></li>
+					</ul>
+				</li>
 
 			</ul>
 		<!-- sidebar menu end-->

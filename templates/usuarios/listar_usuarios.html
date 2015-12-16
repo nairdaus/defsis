@@ -9,16 +9,16 @@
 		<thead>
 			<tr>
 				<th><i class="fa fa-user"></i>Nombres</th>
-				<th><i class="fa fa-adjunst"></i>Tipo</th>
-				<th><i class="fa fa-edit"></i>Acciones</th>
+				<th><i class="fa fa-adjunst"></i>Usuario</th>
+				<th><i class="fa fa-edit"></i>Tipo</th>
 			</tr>
 		</thead>
 		<tbody>
 		{% for usuario in usuarios %}
 			<tr>
 				<td><a href="{% url 'edit_user_view' usuario.pk %}">{{usuario.get_full_name}} </a></td>
-				<td><a href="#"></a>{{usuario.email}} </td>
-				<td><a href="#"></a> acciones </td>
+				<td>{{usuario.username}} </td>
+				<td> {{usuario.acces}} </td>
 			</tr>
 		{% endfor %}
 		</tbody>
