@@ -1,11 +1,13 @@
-from django.shortcuts import render, render_to_response
 from django.template.context import RequestContext
-from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
-from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib.auth.hashers import make_password
+from django.http import HttpResponse, HttpResponseRedirect
+from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render, render_to_response
+
 from .forms import RegistroUserForm
 
 
@@ -74,8 +76,9 @@ def cerrar_sesion(request):
 @login_required(login_url = '/')
 def edit_user_view(request, id_user):
 	usuario = User.objects.get(id = id_user)
+	tipos = {'Psicologo(a)':1,'Trabajador(a) Social':2,'Abogado(a)':3,'Jefatura':4,'Secretaria':5}
 	template = 'usuarios/editar_usuario.html'
-	return render(request, template, {'usuario': usuario} )
+	return render(request, template, {'usuario': usuario, 'tipos':tipos} )
 
 @csrf_exempt
 @login_required(login_url = '/')
@@ -93,7 +96,7 @@ def save_modify(request):
 	current_user.first_name = nombre
 	current_user.last_name = apellidos
 	current_user.username = usuario
-	current_user.password = clave
+	current_user.password = make_password(clave)
 	current_user.acces = tipo_usuario
 	current_user.save()
 

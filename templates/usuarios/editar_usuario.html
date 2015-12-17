@@ -4,17 +4,17 @@
 	<div class="col-lg-12">
 		<div class="form-panel">
 			<h4 class="mb"><i class="fa fa-angle-right"></i> Modificar Usuario</h4>
+
 			<form class="form-horizontal style-form" action="/usuarios/guardar_modificar/" method="post">
 			{% csrf_token %}
 			<input name="id" type="hidden" value="{{usuario.id}}">
 				<label class="col-sm-2 col-sm-2 control-label">Perfil de usuario</label>
+
 				<select name="seleccion" class="form-control">
-					<option >Psicologo(a)</option>
-					<option >Trabajador(a) Social</option>
-					<option >Abogado(a)</option>
-					<option >Jefatura</option>
-					<option >Secretaria</option>
+				{% for tipo in tipos %}
+					<option {% if tipo.value == usuario.acces %} selected="selected"{% endif %}> {{tipo.key}}</option>
 				</select>
+				{% endfor %}
 				<br/>
 				<div class="form-group">
 					<label class="col-sm-2 col-sm-2 control-label">Nombres</label>
@@ -42,6 +42,7 @@
 					</div>
 				</div>
 				<button type="submit" class="btn btn-theme">Actualizar</button>
+				<a href="{% url 'listar_user_view' %}" class="btn btn-theme">Cancelar</a>
 			</form>
 		</div>
 	</div>

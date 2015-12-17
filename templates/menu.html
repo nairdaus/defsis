@@ -162,7 +162,7 @@
 				<p class="centered">
 					<a href="profile.html"><img src="{% static "img/ui-sam.jpg" %}" class="img-circle" width="60"></a>
 				</p>
-				<h5 class="centered">USER NAME</h5>
+				<h5 class="centered">{{user.first_name }} {{user.last_name}}</h5>
 
 				<li class="mt">
 					<a href="{% url 'dashboard' %}" >
