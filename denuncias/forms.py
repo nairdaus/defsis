@@ -9,3 +9,6 @@ class DefensoriasForm(forms.Form):
 class EstadoForm(forms.Form):
 	nombre = forms.CharField()
 
+class TipologiaForm(forms.Form):
+	nombre = forms.CharField()
+

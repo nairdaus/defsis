@@ -104,8 +104,4 @@ def save_modify(request):
 
 	return HttpResponseRedirect('/usuarios/')
 
-# Esta vista es de prueba, y debe ser trasladada al modulo "denuncias"
-@login_required(login_url = '/')
-def registrar_denuncia(request):
-	template = 'registrarDenuncia.html'
-	return render(request, template)
+

@@ -11,10 +11,12 @@
 				<label class="col-sm-2 col-sm-2 control-label">Perfil de usuario</label>
 
 				<select name="seleccion" class="form-control">
-				{% for tipo in tipos %}
-					<option {% if tipo.value == usuario.acces %} selected="selected"{% endif %}> {{tipo.key}}</option>
-				</select>
+
+				{% for tipo,id in tipos.items %}
+					<option {% if id == usuario.acces %} selected="selected"{% endif %} > {{ tipo }} </option>
 				{% endfor %}
+				</select>
+				
 				<br/>
 				<div class="form-group">
 					<label class="col-sm-2 col-sm-2 control-label">Nombres</label>

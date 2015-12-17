@@ -5,7 +5,7 @@
 		<h4>
 			<li class="fa fa-angle-circle">Estados del Caso</li>{% csrf_token %}
 		</h4>
-		{% if estados %}
+		{% if tipologias %}
 		<hr>
 		<thead>
 			<tr>
@@ -14,17 +14,18 @@
 			</tr>
 		</thead>
 		<tbody>
-		{% for estado in estados %}
+		{% for tipologia in tipologias %}
 			<tr>
-				<td><a href="{% url 'edit_estado_view' estado.pk %}">{{estado.nombre}} </a></td>
+				<td><a href="{% url 'edit_tipologias_view' tipologia.pk %}">{{tipologia.nombre}} </a></td>
 			</tr>
 		{% endfor %}
 
 		{% else %}
-		<li>No existen Estados de la denuncia registrados aun</li>
+		<li>No existen Tipologias registrados aun</li>
 		{% endif %}
 		</tbody>
 	</table>
-	<a href="{% url 'agregar_estados_view' %}" class="btn btn-theme">Nuevo Estado</a>
+		<a href="{% url 'agregar_tipologias_view' %}" class="btn btn-theme">Nueva Tipologia</a>
+
 </div>
 {% endblock %}
