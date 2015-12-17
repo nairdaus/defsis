@@ -77,8 +77,8 @@ class PerfilPersona(models.Model):
 
 class Estado(models.Model):
 	nombre = models.CharField(max_length = 40)
-	tipo = models.CharField(max_length = 10)
-	ianus = models.CharField(max_length = 15)
+	tipo = models.CharField(max_length = 10, blank = True, null = True)
+	
 
 class LogDenuncia(models.Model):
 	create = models.DateField(auto_now_add=True)

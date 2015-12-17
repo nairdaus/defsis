@@ -26,7 +26,7 @@ def create_user_view(request):
 			user_model.acces = tipo
 
 			user_model.save()
-			print 'Usuario creado correctamente'
+			
 			
 			return HttpResponseRedirect('/usuarios/')
 

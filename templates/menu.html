@@ -189,7 +189,7 @@
 				</li>
 				
 				<li class="sub-menu">
-					<a class="active" href="javascript:;" >
+					<a href="javascript:;" >
 						<i class="fa fa-tasks"></i>
 						<span>Usuarios</span>
 					</a>
@@ -206,11 +206,17 @@
 						<span>Administracion</span>
 					</a>
 					<ul class="sub">
-						<li ><a  href="{% url 'listar_user_view' %}">Defensorias</a></li>
+						<li ><a  href="{% url 'listar_defensoria' %}">Defensorias</a></li>
+					</ul><ul class="sub">
+						<li ><a  href="{% url 'agregar_defensoria' %}">Agregar Defensorias</a></li>
 					</ul>
 					<ul class="sub">
-						<li ><a  href="{% url 'create_user_view' %}">Estados</a></li>
-					</ul><ul class="sub">
+						<li ><a  href="{% url 'list_estados_view' %}">Estados</a></li>
+					</ul>
+					<ul class="sub">
+						<li ><a  href="{% url 'agregar_estados_view' %}">Agregar Estados</a></li>
+					</ul>
+					<ul class="sub">
 						<li ><a  href="{% url 'create_user_view' %}">Tipologias</a></li>
 					</ul>
 				</li>
