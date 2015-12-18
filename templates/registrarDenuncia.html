@@ -2,27 +2,31 @@
 {% block contenido %}
 <!--main content start-->
 		<form action="" class="form"><!-- DATOS BASICOS -->
-			<div class="row mt">
-				<div class="col-lg-12">
-				<div class="form-panel form-inline">
-					<div class="form-group">
-						<label class="col-sm-4 col-md-4 control-label">Fecha</label>
-						<div class="col-sm-8 col-md-8">
+			<div class="row content-panel">
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<div class="form-inline">
+						<div class="form-group col-sm-3 col-md-3">
+							<label class="control-label">Fecha</label>
+							<br>
 							<input type="date" class="form-control">
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-sm-4 col-md-4 control-label">Codigo DNA</label>
-						<div class="col-sm-8 col-md-8">
+						<div class="form-group col-sm-3 col-md-3">
+							<label class="control-label">Codigo DNA</label>
+							<br>
+							<input type="text" class="form-control" placeholder="99999999">
+						</div>
+						<div class="form-group col-sm-3 col-md-3">
+							<label class="control-label">Nro. Atencion</label>
+							<br>
+							<input type="text" class="form-control" placeholder="99999999">
+						</div>
+						<div class="form-group col-sm-3 col-md-3">
+							<label class="control-label">Tipologia</label>
+							<br>
 							<input type="text" class="form-control" placeholder="99999999">
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="col-sm-4 col-md-4 control-label">Nro. Atencion</label>
-						<div class="col-sm-8 col-md-8">
-							<input type="text" class="form-control" placeholder="99999999">
-						</div>
-					</div>     
+				</div>
 			</div>
 			<!-- DATOS BASICOS -->
 			
@@ -30,7 +34,9 @@
 			<div class="row mt">
 				<div class="col-lg-12">
 					<div class="form-panel form-inline">
-						<h4 class="mb"><i class="fa fa-angle-right"></i> Datos del niño, niña o adolecente</h4>
+						<h4 class="mb">
+							<i class="fa fa-angle-right"></i> Datos del niño, niña o adolecente
+						</h4>
 						<div class="datosNA" role="form">
 							<div class="row">
 								<div class="form-group col-md-3">
@@ -83,34 +89,22 @@
 									<input type="date" id="fnac" name="fnac" class="form-control" id="fechaNac">
 								</div>
 							</div>
-							<hr>
+							<br>
+							<div class="row">
+								<div class="form-group col-md-3">
+									<input type="email" class="form-control" id="domiciliodir" name="domicilio" placeholder="Domicilio">
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" id="telefonodir" name="telefono" placeholder="Telefono">
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" id="domiciliocomunidaddir" name="domiciliocomunidaddir" placeholder="Domicilio Y/O Comunidad">
+								</div>
+							</div>
 						</div>
 						<button id="buttonFormNA" type="button" class="btn btn-theme btn-position">Agregar Nuevo</button>
-						<div class="datosDir">
-						<div class="row">
-							<div class="form-group col-md-3">
-								<input type="email" class="form-control" id="domiciliodir" name="domicilio" placeholder="Domicilio">
-							</div>
-							<div class="form-group col-md-3">
-								<input type="text" class="form-control" id="telefonodir" name="telefono" placeholder="Telefono">
-							</div>
-							<div class="form-group col-md-3">
-								<input type="text" class="form-control" id="domiciliocomunidaddir" name="domiciliocomunidaddir" placeholder="Domicilio Y/O Comunidad">
-							</div>
-						</div>
-						<hr>
-						</div>
-						<button id="botonDir" type="button" class="btn btn-theme btn-position">Agregar Nuevo</button>
-					</div><!-- /form-panel -->
-				</div>
-			</div>
-			<!-- FORMULARIO DATOS DEL NIÑO, NIÑA O ADOLECENTE-->
-			
-			<!-- FORMULARIO DE DIRECCION
-			<div class="row mt">
-				<div class="col-lg-12">
-					<div class="form-panel form-inline">
-						<div class="datosDir">
+
+						<!--<div class="datosDir">
 							<div class="row">
 								<div class="form-group col-md-3">
 									<input type="email" class="form-control" id="domiciliodir" name="domicilio" placeholder="Domicilio">
@@ -124,11 +118,11 @@
 							</div>
 							<hr>
 						</div>
-						<button id="botonDir" type="button" class="btn btn-theme btn-position">Agregar Nuevo</button>
-					</div>
+						<button id="botonDir" type="button" class="btn btn-theme btn-position">Agregar Nuevo</button>-->
+					</div><!-- /form-panel -->
 				</div>
 			</div>
-			FORMULARIO DE DIRECCION -->
+			<!-- FORMULARIO DATOS DEL NIÑO, NIÑA O ADOLECENTE-->
 				  
 			<!-- FORUMULARIO DATOS DEL GRUPO FAMILIAR -->
 			<div class="row mt">
