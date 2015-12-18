@@ -90,10 +90,13 @@
 			clone.find("#estudia").attr("id", "estudia"+contador);
 			clone.find("#ucurso").attr("id", "ucurso"+contador);
 			clone.find("#fnac").attr("id", "fnac"+contador);
+			clone.find("#domiciliodir").attr("id", "domiciliodir"+contador);
+			clone.find("#telefonodir").attr("id", "telefonodir"+contador);
+			clone.find("#domiciliocomunidaddir").attr("id", "domiciliocomunidaddir"+contador);
 			$(clone).removeClass("datosNA").addClass("datosNA"+contador);
 			$('#buttonFormNA').before(clone);
 		});
-		$('#botonDir').on('click', function(){
+		/*$('#botonDir').on('click', function(){
 			contador = contador+1;
 			var clone = $( ".datosDir" ).clone();
 			clone.find("#domiciliodir").attr("id", "domiciliodir"+contador);
@@ -101,7 +104,7 @@
 			clone.find("#domiciliocomunidaddir").attr("id", "domiciliocomunidaddir"+contador);
 			$(clone).removeClass("datosDir").addClass("datosDir"+contador);
 			$('#botonDir').before(clone);
-		});
+		});*/
 		$('#botonGF').on('click', function(){
 			contador = contador+1;
 			var clone = $( ".datosGF" ).clone();
