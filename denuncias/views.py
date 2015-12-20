@@ -97,7 +97,85 @@ def edit_tipologias_view(request, id_tipologia):
 	pass
 
 #CRUD Denuncias
-@login_required(login_url = '/')
+@login_required(login_url = '/usuarios/')
 def registrar_denuncia(request):
+	tipologias = Tipologia.objects.all()
 	template = 'denuncias/registrar_denuncia.html'
-	return render(request, template)	
+	return render(request, template, {'tipologias': tipologias})
+
+@login_required(login_url = '/usuarios/')
+def guardar_denuncia(request):
+
+	fecha_denuncia = request.POST['']
+	codigo_dna= request.POST['']
+	nro_atencion= request.POST['']
+	tipologia= request.POST['']
+	#Esto tiene que entrar en un bucle
+	#Datos de victima
+	nombres_vic= request.POST['']
+	apellidos_vic= request.POST['']
+	gestante= request.POST['']
+	sexo= request.POST['']
+	c_nac= request.POST['']
+	estudia= request.POST['']
+	ultimo_curso= request.POST['']
+	f_nac= request.POST['']
+	#Domicilio victima
+	direccion= request.POST['']
+	telefono= request.POST['']
+	comunidad= request.POST['']
+	#fin Bucle
+
+	#Bucle
+	#Datos del grupo familiar
+	nombres_fam= request.POST['']
+	apellidos_fam= request.POST['']
+	parentezco= request.POST['']
+	edad= request.POST['']
+	sexo_fam= request.POST['']
+	g_inst= request.POST['']
+	ocupacion= request.POST['']
+	#fin 
+
+	#Datos
+	relacion= request.POST['']
+	nombres_denu= request.POST['']
+	parentezco_den= request.POST['']
+	cedula= request.POST['']
+	dir_denun= request.POST['']
+	tel_denun= request.POST['']
+	lug_trab_denun= request.POST['']
+	ocup_denun= request.POST['']
+
+	#Bucle
+	#Datos del denunciado
+	desconocido= request.POST['']
+	nombres_dciado= request.POST['']
+	apellidos_dciado= request.POST['']
+	sexo_dciado= request.POST['']
+	edad_dciado= request.POST['']
+	parentezco_dciado= request.POST['']
+	dir_dciado= request.POST['']
+	tel_dciado= request.POST['']
+	lug_trab_dciado= request.POST['']
+	ocupacion_dciado= request.POST['']
+	denuncias_ant= request.POST['']
+	donde_den= request.POST['']
+	#fin
+
+	#Datos de la denuncia
+	descripcion= request.POST['']
+	opinion= request.POST['']
+	historia_inf= request.POST['']
+
+	#Acciones inmediatas a seguir
+	acciones= request.POST['']
+
+
+@login_required(login_url = '/usuarios/')
+def editar_denuncia(request):	
+	pass
+
+@login_required(login_url = '/usuarios/')
+def listar_denuncias(request):
+	pass

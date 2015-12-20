@@ -45,6 +45,8 @@ class Defensoria(models.Model):
 	nombre = models.CharField(max_length = 40)
 	direccion = models.CharField(max_length = 100, blank = True, null = True)
 	telefono = models.CharField(max_length = 40, blank = True, null = True)
+	def __str__(self):
+		return self.nombre.encode('utf-8')
 
 class Tipologia(models.Model):
 	nombre = models.CharField(max_length = 40)

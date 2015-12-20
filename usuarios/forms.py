@@ -1,8 +1,10 @@
 from django import forms
 from django.contrib.auth.models import User
+from denuncias.models import Defensoria
 
 class RegistroUserForm(forms.Form):
 
+    defensorias = Defensoria.objects.all()
 
     TYPE_USER = (('1','Trabajadora Social'),('2','Psicologo'),('3','Abogado'),('4','Jefatura'),('5','Secretaria'))
 
@@ -12,6 +14,7 @@ class RegistroUserForm(forms.Form):
     password = forms.CharField(min_length=6, widget=forms.PasswordInput())
     password2 = forms.CharField(widget=forms.PasswordInput())
     tipo = forms.ChoiceField(choices = TYPE_USER)
+    defensoria = forms.ModelChoiceField(defensorias)
     
     def clean_username(self):
         """Comprueba que no exista un username igual en la db"""
@@ -27,3 +30,4 @@ class RegistroUserForm(forms.Form):
         if password != password2:
             raise forms.ValidationError('Las claves no coinciden.')
         return password2
+

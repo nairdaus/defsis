@@ -15,4 +15,6 @@ urlpatterns = [
 	url(r'^editar_tipologia/(\d+)$', views.edit_tipologias_view, name = 'edit_tipologias_view'),
 	#CRUD Denuncias
 	url(r'^registrar_denuncia/$', views.registrar_denuncia, name = "registrar_denuncia"),
+	url(r'^listar_denuncias/$', views.listar_denuncias, name = "listar_denuncias"),
+	url(r'^editar_denuncia/$', views.editar_denuncia, name = "editar_denuncia"),
 ]
