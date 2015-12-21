@@ -106,38 +106,38 @@ def registrar_denuncia(request):
 @login_required(login_url = '/usuarios/')
 def guardar_denuncia(request):
 
-	fecha_denuncia = request.POST['']
-	codigo_dna= request.POST['']
-	nro_atencion= request.POST['']
-	tipologia= request.POST['']
+	fecha_denuncia = request.POST['date_form']
+	codigo_dna= request.POST['codigo_dna']
+	nro_atencion= request.POST['nro_atencion']
+	tipologia= request.POST['tipologia']
 	#Esto tiene que entrar en un bucle
 	#Datos de victima
-	nombres_vic= request.POST['']
-	apellidos_vic= request.POST['']
-	gestante= request.POST['']
-	sexo= request.POST['']
-	c_nac= request.POST['']
-	estudia= request.POST['']
-	ultimo_curso= request.POST['']
-	f_nac= request.POST['']
+	nombres_vic= request.POST['nombres']
+	apellidos_vic= request.POST['apellidos']
+	gestante= request.POST['gestante']
+	sexo= request.POST['sexo']
+	c_nac= request.POST['cernac']
+	estudia= request.POST['estudia']
+	ultimo_curso= request.POST['ucurso']
+	f_nac= request.POST['fnac']
 	#Domicilio victima
-	direccion= request.POST['']
-	telefono= request.POST['']
-	comunidad= request.POST['']
+	direccion= request.POST['domicilio']
+	telefono= request.POST['telefono']
+	comunidad= request.POST['domiciliocomunidaddir']
 	#fin Bucle
 
 	#Bucle
 	#Datos del grupo familiar
-	nombres_fam= request.POST['']
-	apellidos_fam= request.POST['']
-	parentezco= request.POST['']
-	edad= request.POST['']
-	sexo_fam= request.POST['']
-	g_inst= request.POST['']
-	ocupacion= request.POST['']
+	nombres_fam= request.POST['nombresgf']
+	apellidos_fam= request.POST['apellidosgf']
+	parentesco= request.POST['parentescogf']
+	edad= request.POST['edadgf']
+	sexo_fam= request.POST['sexogf']
+	g_inst= request.POST['gradogf']
+	ocupacion= request.POST['ocupaciongf']
 	#fin 
 
-	#Datos
+	#Datos denunciante
 	relacion= request.POST['']
 	nombres_denu= request.POST['']
 	parentezco_den= request.POST['']
