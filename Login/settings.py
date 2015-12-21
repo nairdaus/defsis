@@ -25,7 +25,25 @@ SECRET_KEY = '0u!s^akobl=$l+9ige6b%y*nc1mv&w89743p6h@-s35^o$mdul'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
+# Static asset configuration
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 
 # Application definition
@@ -54,6 +72,7 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'Login.urls'
 
+STATIC_URL = '/static/'
 STATICFILES_DIRS = ('static',)
 
 TEMPLATES = [
@@ -78,11 +97,11 @@ WSGI_APPLICATION = 'Login.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
 #    'default': {
 #            'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
 #            'NAME': 'dog6iab2017cj',                      # Or path to database file if using sqlite3.
@@ -92,7 +111,7 @@ DATABASES = {
 #            'HOST': 'postgres://kqcyvhzygoqlso:HYK7385nx1-fFY2uRrwTYzcHlr@ec2-54-204-8-224.compute-1.amazonaws.com:5432/dog6iab2017cj',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
 #            'PORT': '5432',                      # Set to empty string for default.
 #        }
-}
+#}
 
 
 # Password validation
@@ -131,4 +150,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+
+
