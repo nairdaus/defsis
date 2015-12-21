@@ -73,3 +73,8 @@ def listado_casos(request):
 def detalles_del_caso(request):
 	template = 'detallesDelCaso.html'
 	return render(request, template)
+
+@login_required(login_url = '/')
+def calendario(request):
+	template = 'calendario.html'
+	return render(request, template)

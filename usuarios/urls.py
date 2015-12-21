@@ -10,5 +10,6 @@ urlpatterns = [
 	url(r'^mis_casos/$', views.mis_casos, name = "mis_casos"),
 	url(r'^registrar_actuaciones/$', views.registrar_actuaciones, name = "registrar_actuaciones"),
 	url(r'^listado_casos/$', views.listado_casos, name = "listado_casos"),
-	url(r'^detalles_del_caso/$', views.detalles_del_caso, name = "detalles_del_caso")
+	url(r'^detalles_del_caso/$', views.detalles_del_caso, name = "detalles_del_caso"),
+	url(r'^calendario/$', views.calendario, name = "calendario")
 ]
