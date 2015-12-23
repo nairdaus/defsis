@@ -1,1 +1,1 @@
-web: gunicorn sidsecod.wsgi --log-file -
+web: gunicorn defsis.wsgi
