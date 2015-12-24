@@ -19,6 +19,7 @@ from django.contrib import admin
 from usuarios import views
 
 urlpatterns = [
+    (r'^static/(?P.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
     url(r'^$', views.login_view, name = "home"),
     url(r'^inicio', views.dashboard_view, name = "dashboard"),
     url(r'^admin/', admin.site.urls),
