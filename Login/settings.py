@@ -59,13 +59,20 @@ ROOT_URLCONF = 'Login.urls'
 # STATIC_ROOT = 'staticfiles'
 # STATIC_URL = '/static/'
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, '../Login/static'))
-import os
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-PROJECT_DIR = os.path.join(PROJECT_ROOT,'../Login')
-STATIC_ROOT = os.path.join(PROJECT_ROOT,'staticfiles/')
+#import os
+#PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+#PROJECT_DIR = os.path.join(PROJECT_ROOT,'../Login')
+#STATIC_ROOT = os.path.join(PROJECT_ROOT,'staticfiles/')
+#STATIC_URL = '/static/'
+#STATICFILES_DIRS = (
+#    os.path.join(PROJECT_DIR,'static/'),
+#)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_DIR,'static/'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 TEMPLATES = [
