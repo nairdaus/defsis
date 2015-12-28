@@ -13,8 +13,9 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 import psycopg2
 import urlparse
+import dj_database_url
 
-
+DATABASES['default'] =  dj_database_url.config()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -109,6 +110,7 @@ conn = psycopg2.connect(
 	host=url.hostname,
 	port=url.port
 )
+
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
