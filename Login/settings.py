@@ -118,7 +118,7 @@ DATABASES = {
 	# 	'ENGINE': 'django.db.backends.sqlite3',
 	# 	'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 	# }
-	'postgressdb': {
+	'default': {
 		'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
 		'NAME': 'd3mc2vtrbm4hm8',                      # Or path to database file if using sqlite3.
 		# The following settings are not used with sqlite3:
@@ -128,7 +128,7 @@ DATABASES = {
 		'PORT': '5432',                      # Set to empty string for default.
 	}
 }
-DATABASES['postgressdb'] =  dj_database_url.config()
+DATABASES['default'] =  dj_database_url.config()
 
 
 # Password validation
