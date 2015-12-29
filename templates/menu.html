@@ -162,12 +162,12 @@
 				<p class="centered">
 					<a href="profile.html"><img src="{% static "img/ui-sam.jpg" %}" class="img-circle" width="60"></a>
 				</p>
-				<h5 class="centered">{{user.first_name }} {{user.last_name}}</h5>
+				<h5 class="centered">USER NAME</h5>
 
 				<li class="mt">
-					<a href="{% url 'dashboard' %}" >
+					<a href="index.html">
 					<i class="fa fa-dashboard"></i>
-					<span>Inicio</span>
+					<span>Dashboard</span>
 					</a>
 				</li>
 
@@ -178,38 +178,59 @@
 					</a>
 					<ul class="sub">
 						<li><a  href="{% url 'registrar_denuncia' %}">Registrar Denuncia</a></li>
+						<li><a  href="buttons.html">Buttons</a></li>
+						<li><a  href="panels.html">Panels</a></li>
 					</ul>
 				</li>
 
 				<li class="sub-menu">
 					<a href="javascript:;" >
-						<i class="fa fa-exchange"></i>
-						<span>Mis Casos</span>
+						<i class="fa fa-cogs"></i>
+						<span>Components</span>
 					</a>
+					<ul class="sub">
+						<li><a href="calendar.html">Calendar</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="todo_list.html">Todo List</a></li>
+					</ul>
 				</li>
-				
 				<li class="sub-menu">
 					<a href="javascript:;" >
+						<i class="fa fa-book"></i>
+						<span>Extra Pages</span>
+					</a>
+					<ul class="sub">
+						<li><a  href="blank.html">Blank Page</a></li>
+						<li><a  href="login.html">Login</a></li>
+						<li><a  href="lock_screen.html">Lock Screen</a></li>
+					</ul>
+				</li>
+				<li class="sub-menu">
+					<a class="active" href="javascript:;" >
 						<i class="fa fa-tasks"></i>
 						<span>Usuarios</span>
 					</a>
 					<ul class="sub">
-						<li ><a  href="{% url 'listar_user_view' %}">Gestion de Usuarios</a></li>
+						<li class="active"><a  href="{% url 'listar_user_view' %}">Gestion de Usuarios</a></li>
 					</ul>
 				</li>
 				<li class="sub-menu">
-					<a  href="javascript:;" >
-						<i class="fa fa-cogs"></i>
-						<span>Administracion</span>
+					<a href="javascript:;" >
+						<i class="fa fa-th"></i>
+						<span>Data Tables</span>
 					</a>
 					<ul class="sub">
-						<li ><a  href="{% url 'listar_defensoria' %}">Defensorias</a></li>
+						<li><a  href="#">Data Tables/a></li>
 					</ul>
+				</li>
+				<li class="sub-menu">
+					<a href="javascript:;" >
+						<i class=" fa fa-bar-chart-o"></i>
+						<span>Charts</span>
+					</a>
 					<ul class="sub">
-						<li ><a  href="{% url 'list_estados_view' %}">Estados</a></li>
-					</ul>					
-					<ul class="sub">
-						<li ><a  href="{% url 'list_tipologias_view' %}">Tipologias</a></li>
+						<li><a  href="morris.html">Morris</a></li>
+						<li><a  href="chartjs.html">Chartjs</a></li>
 					</ul>
 				</li>
 

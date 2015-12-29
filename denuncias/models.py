@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-from django.contrib.auth.models import User
+
 from django.db import models
 
 class Tipo(models.Model):
@@ -27,8 +27,6 @@ class Persona(models.Model):
 	ocupacion = models.CharField(max_length = 40, blank = True, null = True)
 	cedula = models.CharField(max_length = 40, blank = True, null = True)
 	lugar_trabajo = models.CharField(max_length = 40, blank = True, null = True)
-	create = models.DateField(auto_now_add=True)
-	modificate = models.DateField(auto_now=True)
 	# Relaciones 
 	tipo = models.ManyToManyField(Tipo)
 
@@ -45,8 +43,6 @@ class Defensoria(models.Model):
 	nombre = models.CharField(max_length = 40)
 	direccion = models.CharField(max_length = 100, blank = True, null = True)
 	telefono = models.CharField(max_length = 40, blank = True, null = True)
-	def __str__(self):
-		return self.nombre.encode('utf-8')
 
 class Tipologia(models.Model):
 	nombre = models.CharField(max_length = 40)
@@ -60,9 +56,7 @@ class Denuncia(models.Model):
 	nro_atencion = models.CharField(max_length = 10)
 	inhabilitado = models.BooleanField()
 	tipologia = models.ForeignKey(Tipologia)
-	defensoria = models.ForeignKey(Defensoria)
-	create = models.DateField(auto_now_add=True)
-	modificate =  models.DateField(auto_now=True)
+	defensoria = models.ForeignKey(Denuncia)
 
 	def __str__(self):
 		return self.codigo_dna.encode('utf-8')
@@ -79,15 +73,15 @@ class PerfilPersona(models.Model):
 
 class Estado(models.Model):
 	nombre = models.CharField(max_length = 40)
-	tipo = models.CharField(max_length = 10, blank = True, null = True)
-	
+	tipo = models.CharField(max_length = 10)
+	ianus = models.CharField(max_length = 15)
+	estado = models.ForeignKey(Denuncia)
 
-class LogDenuncia(models.Model):
-	create = models.DateField(auto_now_add=True)
-	modificated = models.DateField(auto_now=True)
-	estado = models.ForeignKey(Estado)
+class Sentencia(models.Model):
+	sentencia = models.TextField()
+	observaciones = models.TextField()
+	f_sent = models.DateField(auto_now = True)
 	denuncia = models.ForeignKey(Denuncia)
-
 
 class Actuaciones(models.Model):
 	f_accion = models.DateField()
@@ -97,9 +91,11 @@ class Actuaciones(models.Model):
 	pag_adjuntas = models.CharField(max_length = 40, blank = True)
 	denuncia = models.ForeignKey(Denuncia)
 
-class LogDenuncia(models.Model):
-	usuario = models.ForeignKey(User)
-	accion = models.CharField(max_length=255)
-	create = models.DateField(auto_now_add=True)
-	modificated = models.DateField(auto_now=True)
+
+
+class Cierre(models.Model):
+	resuelto = models.BooleanField()
+	derivado = models.BooleanField()
+	observaciones = models.TextField()
+	denuncia = models.ForeignKey(Denuncia)
 
