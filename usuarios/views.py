@@ -69,6 +69,7 @@ def registrar_actuaciones(request):
 def listado_casos(request):
 	template = 'listadoCasos.html'
 	return render(request, template)
+
 @login_required(login_url = '/')
 def detalles_del_caso(request):
 	template = 'detallesDelCaso.html'

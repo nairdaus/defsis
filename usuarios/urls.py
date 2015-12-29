@@ -11,5 +11,9 @@ urlpatterns = [
 	url(r'^registrar_actuaciones/$', views.registrar_actuaciones, name = "registrar_actuaciones"),
 	url(r'^listado_casos/$', views.listado_casos, name = "listado_casos"),
 	url(r'^detalles_del_caso/$', views.detalles_del_caso, name = "detalles_del_caso"),
+<<<<<<< HEAD
+	url(r'^calendario/$', views.calendario, name = "calendario"),
+=======
 	url(r'^calendario/$', views.calendario, name = "calendario")
+>>>>>>> origin/frontdev
 ]

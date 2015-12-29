@@ -71,10 +71,10 @@ ROOT_URLCONF = 'Login.urls'
 #STATICFILES_DIRS = (
 #    os.path.join(PROJECT_DIR,'static/'),
 #)
-<<<<<<< HEAD
-=======
+#<<<<<<< HEAD
+#=======
 #BASE_DIR = os.path.dirname(os.path.abspath(__file__))
->>>>>>> 956f1574bc8c5b6ffc41e445aa787ec4e76bbab8
+#>>>>>>> 956f1574bc8c5b6ffc41e445aa787ec4e76bbab8
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
