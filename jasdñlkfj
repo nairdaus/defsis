@@ -1,0 +1,385 @@
+[33mcommit 369819e9a4429ce94947e08846005a1607c82963[m
+Author: mcli <mclimber28@gmail.com>
+Date:   Mon Dec 28 21:28:54 2015 -0400
+
+    postgress config 5
+
+[33mcommit 6b85047c89e7f754e86b3a74ed8a9eae3b711087[m
+Merge: 6f6d3f2 1d6e70b
+Author: mcli <mclimber28@gmail.com>
+Date:   Mon Dec 28 21:12:59 2015 -0400
+
+    postgress config 4
+
+[33mcommit 6f6d3f2c0ed24771454f92207df3edb00bacedd4[m
+Merge: f02bad0 956f157
+Author: mcli <mclimber28@gmail.com>
+Date:   Mon Dec 28 21:02:45 2015 -0400
+
+    mi maquina local
+    
+    jajja
+
+[33mcommit 956f1574bc8c5b6ffc41e445aa787ec4e76bbab8[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Mon Dec 28 10:26:30 2015 -0400
+
+    postgress config 3
+
+[33mcommit d7a304e01474dc29aade80ab23da6b0e569829f6[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Mon Dec 28 10:22:31 2015 -0400
+
+    postgress config 2
+
+[33mcommit e387059dd69ebf52b5b444266ee744959aa5bdf0[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Mon Dec 28 10:00:48 2015 -0400
+
+    postgress configuracion 2
+
+[33mcommit 0d666671338491d10adc95dba4afe023a69e84b1[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Mon Dec 28 09:52:25 2015 -0400
+
+    postgress
+
+[33mcommit f02bad0979a0b67f3b788d4b90bb338188f8f0d5[m
+Author: mcli <mclimber28@gmail.com>
+Date:   Thu Dec 24 22:21:46 2015 -0400
+
+    sigo con los estaticos
+
+[33mcommit ad270cbe1fc28743191d0dec28134392f8bb4bea[m
+Author: mcli <mclimber28@gmail.com>
+Date:   Thu Dec 24 22:11:29 2015 -0400
+
+    sigo con estaticos
+
+[33mcommit 76c5fc0a97ff92f2e4ee90177733bc233b7102b8[m
+Author: mcli <mclimber28@gmail.com>
+Date:   Thu Dec 24 21:56:11 2015 -0400
+
+    editando estatics
+
+[33mcommit a0cb166b734764ff219e150b1ee8e8b9fae74cfa[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Thu Dec 24 09:32:17 2015 -0400
+
+    edit sttngs
+    
+    sigo
+
+[33mcommit 96f0e86cded56616111b9bcbc4d229fe481990c7[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Thu Dec 24 09:30:45 2015 -0400
+
+    ultimo de estaticos
+    
+    sigo con statics
+
+[33mcommit 6b8cdf0e2f89bae72b7a040c5467f8139148b8be[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Thu Dec 24 09:20:21 2015 -0400
+
+    bootstrap edit
+    
+    sigo con los estaticos
+
+[33mcommit bfd53e90ed011702c0228b8bac9511e41fd0637a[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Thu Dec 24 07:56:44 2015 -0400
+
+    base estaticos
+    
+    sigo con los estaticos
+
+[33mcommit ca8ba94072136849f3c2362809100424b3c7d83e[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Thu Dec 24 07:20:09 2015 -0400
+
+    wsgi editado
+    
+    edit wsgi
+
+[33mcommit 48232b5849e119a2d3163733e9dce587e027d2bc[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Thu Dec 24 07:13:33 2015 -0400
+
+    editando wsgi para estaticos
+    
+    edit wsgi for statics
+
+[33mcommit f4e6101afe0c094ec026251f9ed3170fadfd9889[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Wed Dec 23 21:28:19 2015 -0400
+
+    editando settings para estaticos
+    
+    edit settings
+
+[33mcommit 7f3ac9de81e132f4218328bbe07747b23d64805f[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Wed Dec 23 21:21:39 2015 -0400
+
+    editando procfile para los estaticos 2
+    
+    procfile edit
+
+[33mcommit 5c6c518e586d20cffc25541cc964479935901065[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Wed Dec 23 21:16:51 2015 -0400
+
+    editando urls 2
+    
+    urls
+
+[33mcommit 1004a2244a2696ef60415a4c563de0a5420cbe8f[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Wed Dec 23 21:14:03 2015 -0400
+
+    actualizando urls para estaticos
+    
+    urls for statics
+
+[33mcommit faf0bb2730fea2fcde70c68320eb6122ef52a111[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Wed Dec 23 21:11:26 2015 -0400
+
+    editando urls para estaticos
+    
+    edit urls for statics
+
+[33mcommit 81e3c161bdc49a80c00be0b3a2434bab8907c2cc[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Wed Dec 23 21:08:14 2015 -0400
+
+    editando procfile para los estaticos
+    
+    edit procfile statics
+
+[33mcommit a801c084969abded54b7d7394bdfa48bd034b6b5[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Wed Dec 23 20:51:30 2015 -0400
+
+    static configs 1
+    
+    configurando de nuevo los estaticos
+
+[33mcommit 0659e092d4e666745d86b13dee7b18f96ae2049a[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Wed Dec 23 20:40:45 2015 -0400
+
+    static configs
+    
+    configuracion de estaticos
+
+[33mcommit ff836f823fce74aa28ada755d1e94c6d63dbfc02[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Wed Dec 23 20:07:09 2015 -0400
+
+    rename requirements
+    
+    renombrando
+
+[33mcommit 58e10c1af1f1521efa0b0af30a8c2be81d36443a[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Wed Dec 23 19:58:15 2015 -0400
+
+    procfile edit 2
+    
+    procfile
+
+[33mcommit 1d6e70bed5592c3de9e51fd33764548bb7ce44a3[m
+Author: mcli <mclimber28@gmail.com>
+Date:   Wed Dec 23 19:50:26 2015 -0400
+
+    procfile edit 0
+
+[33mcommit 775b74870d4538b5855d34a5073c0b6a767432ac[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Wed Dec 23 10:57:12 2015 -0400
+
+    prueba defsis
+
+[33mcommit 5f573771ba2a071cfd0844cd7eaac6bc7bed6971[m
+Author: mcli <mclimber28@gmail.com>
+Date:   Mon Dec 21 22:34:41 2015 -0400
+
+    requirements
+    
+    nombre fallado
+
+[33mcommit 62431a55b66d93bbd5e717cdb24778fa91fbf33a[m
+Merge: dcbae6e 85bbcba
+Author: mcli <mclimber28@gmail.com>
+Date:   Mon Dec 21 20:38:58 2015 -0400
+
+    init
+
+[33mcommit dcbae6e469e156403a64155b1060abd6b4b7038e[m
+Author: mcli <mclimber28@gmail.com>
+Date:   Mon Dec 21 20:26:34 2015 -0400
+
+    otro del calendario
+
+[33mcommit 85bbcba8a150cbf763fe2fcad57dffc5a60935f4[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Mon Dec 21 09:45:06 2015 -0400
+
+    calendario
+    
+    calendario sin funcionar
+
+[33mcommit 8acae211c9a367e42d3ad048e1e1f8194a5202b3[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Fri Dec 18 11:02:46 2015 -0400
+
+    base
+    
+    revisado casi final
+
+[33mcommit 52cc13524e89dda127e05e1f054cef9d6a4e1a8b[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Fri Dec 18 09:42:16 2015 -0400
+
+    base edit
+    
+    base edit
+
+[33mcommit 5cc427e2af76de31768834a4bb45120502ae41c5[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Fri Dec 18 09:35:26 2015 -0400
+
+    select css
+    
+    select css
+
+[33mcommit db5ddc62d4c6aaf76dc804f04d1a532b6ce68f39[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Fri Dec 18 09:35:04 2015 -0400
+
+    pantalla registrar denuncia
+    
+    registrar denuncia tipologia
+
+[33mcommit 87aad3054a82a2342d5456a871e5fe67ef75fadd[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Thu Dec 17 10:59:32 2015 -0400
+
+    acabada la pantalla detalle del caso
+    
+    finalizada la pantalla del caso
+
+[33mcommit 0334287d9cd02e8f72613c0004ccd4a5891e8439[m
+Author: mcli <mclimber28@gmail.com>
+Date:   Thu Dec 17 07:50:52 2015 -0400
+
+    pantalla detalles del caso
+    
+    cambie algo de basehtml y empeze la pantalla detalles del caso
+
+[33mcommit dd1f898b55b1b7021986bed7693d4def7955955a[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Wed Dec 16 10:54:12 2015 -0400
+
+    panalla registrar actuaciones
+    
+    sigo con la pantalla
+
+[33mcommit 397088251020a86edae208c8d68e5593d559d7a0[m
+Author: mcli <mclimber28@gmail.com>
+Date:   Wed Dec 16 07:34:33 2015 -0400
+
+    paginacion y pantalla registrarActuaciones
+    
+    paginacion pantalla casi acabada
+
+[33mcommit 67f11a1b865e5c59192acf8308e1dd3533f5f174[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Tue Dec 15 10:59:14 2015 -0400
+
+    registrar actuaciones
+    
+    pantallas registrar actuaciones incio
+    listado de casos y mis casos falta la paginacion
+
+[33mcommit 2b586b10d09933fbc4fa9991cbc345bfbe91d77e[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Tue Dec 15 09:34:30 2015 -0400
+
+    db
+    
+    db
+
+[33mcommit 47845a733843480111f4538646c37e1a8e4d21c8[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Tue Dec 15 09:29:20 2015 -0400
+
+    urlAndViewVerCAsos
+    
+    ver casos enlaces
+
+[33mcommit 1a24b8c37e30a8b5f7532eeec7448425034daf98[m
+Author: mcli28 <mclimber28@gmail.com>
+Date:   Tue Dec 15 09:19:33 2015 -0400
+
+    pantalla vercasos
+    
+    inicio de pantalla ver casos
+
+[33mcommit f6468a7a0a1b84a5cd4ed07c83e2832de9dad9ae[m
+Author: mcli <mclimber28@gmail.com>
+Date:   Tue Dec 15 07:28:36 2015 -0400
+
+    pantalla misCasos
+    
+    pantalla misCasos version sin revisar
+
+[33mcommit 16a29037e542d32adc3042129505370450a6579c[m
+Author: mcli <mclimber28@gmail.com>
+Date:   Tue Dec 15 06:30:11 2015 -0400
+
+    menu
+    
+    menu casi terminado
+
+[33mcommit 298985471cf1e56a15368531f4f903fb56024359[m
+Author: mcli <mclimber28@gmail.com>
+Date:   Mon Dec 14 22:52:16 2015 -0400
+
+    notificaciones comentadas
+    
+    notificaciones comentadas en el menu
+
+[33mcommit 5c29ffe9d19fc4ce39c0a2ac399d01c8041d6940[m
+Author: mcli <mclimber28@gmail.com>
+Date:   Mon Dec 14 22:40:19 2015 -0400
+
+    color del menu
+    
+    cambio de color del menu
+
+[33mcommit 6901e0eab7a432f968e0b2d9ae2fb7753bf34522[m
+Author: nairdaus <mansilladrian@gmail.com>
+Date:   Mon Dec 14 18:10:40 2015 -0400
+
+    pre-Alfa
+
+[33mcommit 1cdabca161daf7c669cda794482b18d415cb4e51[m
+Author: nairdaus <mansilladrian@gmail.com>
+Date:   Mon Dec 14 17:00:24 2015 -0400
+
+    pre-Alfa
+
+[33mcommit fbe3067368220319b20e571091a8feaca9ac58cd[m
+Author: nairdaus <mansilladrian@gmail.com>
+Date:   Mon Dec 14 11:36:30 2015 -0400
+
+    pre-Alfa
+
+[33mcommit 92537b79e8e2551029ca99f43240dea65cf9c13f[m
+Author: nairdaus <mansilladrian@gmail.com>
+Date:   Mon Dec 14 09:16:13 2015 -0400
+
+    pre-Alfa
