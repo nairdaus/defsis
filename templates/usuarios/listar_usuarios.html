@@ -3,25 +3,29 @@
 <div class="content-panel">
 	<table class="table tablestriped table-hover">
 		<h4>
-			<li class="fa fa-angle-circle">Usuarios</li>{% csrf_token %}
+			<li class="fa fa-angle-circle">Usuarios</li>
 		</h4>
+
 		<hr>
 		<thead>
 			<tr>
-				<th><i class="fa fa-user"></i>Nombres</th>
-				<th><i class="fa fa-adjunst"></i>Tipo</th>
-				<th><i class="fa fa-edit"></i>Acciones</th>
+				<th><i class="fa fa-user"></i>Usuario</th>
+				<th><i class="fa fa-adjunst"></i>Nombres</th>
+				<th><i class="fa fa-edit"></i>Tipo</th>
 			</tr>
 		</thead>
 		<tbody>
 		{% for usuario in usuarios %}
 			<tr>
-				<td><a href="#">{{usuario.get_full_name}} </a></td>
-				<td><a href="#"></a>{{usuario.email}} </td>
-				<td><a href="#"></a> acciones </td>
+				<td><a href="{% url 'edit_user_view' usuario.pk %}">{{usuario.username}} </a></td>
+				<td>{{usuario.get_full_name}} </td>
+				{% for tipo,id in tipos.items %}
+				{% if id == usuario.acces %}<td> {{tipo}} </td>{% endif %}
+				{% endfor %}
 			</tr>
 		{% endfor %}
 		</tbody>
 	</table>
+	<a href="{% url 'create_user_view' %}" class="btn btn-theme">Nuevo Usuario</a>
 </div>
 {% endblock %}

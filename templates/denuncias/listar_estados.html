@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="content-panel">
+	<table class="table tablestriped table-hover">
+		<h4>
+			<li class="fa fa-angle-circle">Estados del Caso</li>{% csrf_token %}
+		</h4>
+		{% if estados %}
+		<hr>
+		<thead>
+			<tr>
+				<th><i class="fa fa-user"></i>Nombres</th>
+			
+			</tr>
+		</thead>
+		<tbody>
+		{% for estado in estados %}
+			<tr>
+				<td><a href="{% url 'edit_estado_view' estado.pk %}">{{estado.nombre}} </a></td>
+			</tr>
+		{% endfor %}
+
+		{% else %}
+		<li>No existen Estados de la denuncia registrados aun</li>
+		{% endif %}
+		</tbody>
+	</table>
+	<a href="{% url 'agregar_estados_view' %}" class="btn btn-theme">Nuevo Estado</a>
+</div>
+{% endblock %}

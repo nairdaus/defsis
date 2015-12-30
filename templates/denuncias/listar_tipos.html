@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="content-panel">
+	<div class="col-lg-12">
+		<table class="table tablestriped table-hover">
+			<h4>
+				<li class="fa fa-angle-circle">Tipos de persona</li>{% csrf_token %}
+			</h4>
+			{% if tipos %}
+			<hr>
+			<thead>
+				<tr>
+					<th><i class="fa fa-user"></i>Tipos</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for tipo in tipos %}
+				<tr>
+					<td><a href="{% url 'edit_tipo_view' tipo.pk %}">{{tipo.tipo}} </a></td>
+				</tr>
+				{% endfor %}
+
+				{% else %}
+				<li>No existen tipos de persona registradas aun</li>
+				{% endif %}
+			</tbody>
+		</table>
+		<a href="{% url 'agregar_tipo_view' %}" class="btn btn-theme">Nuevo Tipo</a>
+	</div>
+</div>
+{% endblock %}

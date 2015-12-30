@@ -19,8 +19,9 @@ from django.contrib import admin
 from usuarios import views
 
 urlpatterns = [
-    url(r'^$', views.login_view, name = "home"),
+ 	url(r'^$', views.login_view, name = "home"),
     url(r'^inicio', views.dashboard_view, name = "dashboard"),
     url(r'^admin/', admin.site.urls),
-    url(r'^usuarios/', include('usuarios.urls'))
+    url(r'^usuarios/', include('usuarios.urls')),
+    url(r'^denuncias/', include('denuncias.urls'))
 ]

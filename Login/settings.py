@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '0u!s^akobl=$l+9ige6b%y*nc1mv&w89743p6h@-s35^o$mdul'
+SECRET_KEY = 'l8rh*#06^65=+n7x=(4^)m^n3kfnx-g!zw2%aazzjt%0#u9u_z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'usuarios',
+    'denuncias',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -52,8 +53,6 @@ MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'Login.urls'
-
-STATICFILES_DIRS = ('static',)
 
 TEMPLATES = [
     {
@@ -76,22 +75,12 @@ WSGI_APPLICATION = 'Login.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-# import jd_database_url
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-#    'default': {
-#            'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-#            'NAME': 'dog6iab2017cj',                      # Or path to database file if using sqlite3.
-#            # The following settings are not used with sqlite3:
-#            'USER': 'kqcyvhzygoqlso',
-#            'PASSWORD': 'HYK7385nx1-fFY2uRrwTYzcHlr',
-#            'HOST': 'postgres://kqcyvhzygoqlso:HYK7385nx1-fFY2uRrwTYzcHlr@ec2-54-204-8-224.compute-1.amazonaws.com:5432/dog6iab2017cj',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
-#            'PORT': '5432',                      # Set to empty string for default.
-#        }
 }
 
 
@@ -117,9 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ES'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/La_Paz'
 
 USE_I18N = True
 
@@ -132,3 +121,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = ('static',)
