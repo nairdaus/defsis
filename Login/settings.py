@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'Login.wsgi.application'
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-		'NAME': 'dacruv5drggni8',                      # Or path to database file if using sqlite3.
-		'USER': 'szdpcuqnhlvueb',
-		'PASSWORD': '7UydckszIiLBziPUO9gH5KRm0n',
-		'HOST': 'ec2-54-83-55-214.compute-1.amazonaws.com', # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+		'NAME': 'dk5tu9q1020st',                      # Or path to database file if using sqlite3.
+		'USER': 'gbypkjjmxohthu',
+		'PASSWORD': 'IypiOWsvyhtDvrTsKGJpyaFYJo',
+		'HOST': 'ec2-54-83-204-228.compute-1.amazonaws.com', # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
 		'PORT': '5432',                      # Set to empty string for default.
 	}
 }
