@@ -88,7 +88,7 @@ DATABASES = {
 		'HOST': 'ec2-54-204-8-138.compute-1.amazonaws.com', # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
 		'PORT': '5432',                      # Set to empty string for default.
 	}
-	
+
 	# 'default': {
 	# 	'ENGINE': 'django.db.backends.postgresql_psycopg2',
 	# 	#'ENGINE': 'django.db.backends.postgresql',
@@ -99,6 +99,16 @@ DATABASES = {
 	# 	'PORT': '',
 	# }
 }
+#-----------------------------heroku config--------------------------
+DATABASES['default'] =  dj_database_url.config(default=os.getenv('DATABASE_URL'))
+# DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+# DATABASES['default']['HOST'] = 'ec2-54-204-8-138.compute-1.amazonaws.com'
+# DATABASES['default']['NAME'] = 'dam35dl4hmr6dl'
+# DATABASES['default']['USER'] = 'qdimcviawfcrqt'
+# DATABASES['default']['PASSWORD'] = 'B71NlKZN91_LDvL2aHMRZOo8vp'
+# DATABASES['default']['PORT'] = '5432'
+
+#------------------------local config------------------------------
 # DATABASES['default'] =  dj_database_url.config(default=os.getenv('DATABASE_URL'))
 # DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 # DATABASES['default']['NAME'] = 'defensoria'
