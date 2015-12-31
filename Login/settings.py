@@ -48,10 +48,10 @@ INSTALLED_APPS = [
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_ROOT = 'staticfiles'
-STATIC_URL = 'app/static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-	os.path.join(BASE_DIR, 'static'),
+	os.path.join(BASE_DIR, 'app/static'),
 )
 
 MIDDLEWARE_CLASSES = [
