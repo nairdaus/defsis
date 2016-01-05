@@ -47,7 +47,7 @@ class Domicilio(models.Model):
 class Defensoria(models.Model):
 	nombre = models.CharField(max_length = 40)
 	direccion = models.CharField(max_length = 100, blank = True, null = True)
-	telefono = models.CharField(max_length = 40, blank = True, null = True)
+	telefono = models.CharField(max_length = 11, blank = True, null = True)
 	def __str__(self):
 		return self.nombre.encode('utf-8')
 
@@ -62,10 +62,11 @@ class Denuncia(models.Model):
 	codigo_dna = models.CharField(max_length = 10)
 	nro_atencion = models.CharField(max_length = 10)
 	inhabilitado = models.BooleanField()
-	descripcion = models.TextField()
-	opinion = models.BooleanField(max_length = 255)
-	historia = models.TextField()
-	#completa = models.BooleanField(default = False)
+	descripcion = models.TextField(blank = True, null = True)
+	cod_ianus = models.CharField(max_length = 20, blank=True, null=True)
+	opinion = models.NullBooleanField(default = False)
+	historia = models.TextField(blank = True, null = True)
+	completa = models.NullBooleanField(default = False)
 	create = models.DateField(auto_now_add=True)
 	modificate =  models.DateField(auto_now=True)
 	tipologia = models.ForeignKey(Tipologia)
@@ -118,3 +119,11 @@ class Juzgado(models.Model):
 	tar = models.CharField(max_length=30)
 	ianus = models.CharField(max_length=30)
 	denuncia = models.ForeignKey(Denuncia)
+
+class Notificaciones(models.Model):
+	f_notificacion = models.DateField()
+	notificacion = models.CharField(max_length=255)
+	vista = models.BooleanField()
+	create = models.DateField(auto_now_add=True)
+	usuario = models.ForeignKey(User)
+

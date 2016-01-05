@@ -9,14 +9,23 @@
 		<hr>
 		<thead>
 			<tr>
-				<th><i class="fa fa-user"></i>Nombres</th>
+				<th><i class="fa fa-user"></i>&nbsp;Nombres</th>
+				<th><i class="fa fa-edit"></i>&nbsp;Acciones</th>
 			
 			</tr>
 		</thead>
 		<tbody>
 		{% for estado in estados %}
 			<tr>
-				<td><a href="{% url 'edit_estado_view' estado.pk %}">{{estado.nombre}} </a></td>
+				<td>
+				{{estado.nombre}}
+				</td>
+				<td>
+
+				<a href="{% url 'edit_estado_view' estado.pk %}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i>editar</a>
+				<a href="" class="btn btn-danger btn-xs"><i class="fa fa-minus-square"></i>Eliminar</a>
+
+				</td>
 			</tr>
 		{% endfor %}
 

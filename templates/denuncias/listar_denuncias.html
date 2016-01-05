@@ -10,10 +10,10 @@
 			<hr>
 			<thead>
 				<tr>
-					<th><i class="fa fa-barcode"></i>Codigo DNA</th>
-					<th><i class="fa fa-calendar"></i>Fecha de la denuncia</th>
-					<th><i class="fa fa-bookmark"></i>Tipologia</th>
-					<th><i class="fa fa-pencil-square-o"></i>Registrar Actuaciones</th>
+					<th><i class="fa fa-barcode"></i>&nbsp;Codigo DNA</th>
+					<th><i class="fa fa-calendar"></i>&nbsp;Fecha de la denuncia</th>
+					<th><i class="fa fa-bookmark"></i>&nbsp;Tipologia</th>
+					<th><i class="fa fa-pencil-square-o"></i>&nbsp;Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -22,7 +22,7 @@
 					<td>{{denuncia.codigo_dna}}</td>
 					<td>{{denuncia.f_denuncia}}</td>
 					<td>{{denuncia.tipologia}}</td>
-					<td><a href="{% url 'agregar_actuacion' denuncia.pk %}">Registrar Actuacion</a> </td>
+					<td><a href="{% url 'agregar_actuacion' denuncia.pk %}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i>&nbsp;Revisar</a> </td>
 				</tr>
 				{% endfor %}
 

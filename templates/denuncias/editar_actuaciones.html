@@ -8,7 +8,7 @@
 				{% csrf_token %}
 				{{ form.as_p }}
 				<button type="submit" class="btn btn-theme">Guardar</button>
-				<a href="{% url 'list_estados_view' %}" class="btn btn-theme">Cancelar</a>
+				<a href="{% url 'agregar_actuacion' denuncia %}" class="btn btn-theme">Cancelar</a>
 		</form>
 	</div>
 </div>

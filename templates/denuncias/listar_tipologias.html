@@ -10,14 +10,20 @@
 			<hr>
 			<thead>
 				<tr>
-					<th><i class="fa fa-user"></i>Nombres</th>
+					<th><i class="fa fa-user"></i>&nbsp;Nombres</th>
 
 				</tr>
 			</thead>
 			<tbody>
 				{% for tipologia in tipologias %}
 				<tr>
-					<td><a href="{% url 'edit_tipologias_view' tipologia.pk %}">{{tipologia.nombre}} </a></td>
+					<td>
+					{{tipologia.nombre}}
+					</td>
+					<td>
+						<a href="{% url 'edit_tipologias_view' tipologia.pk  %}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i>editar</a>
+						<a href="" class="btn btn-danger btn-xs"><i class="fa fa-minus-square"></i>Eliminar</a>
+					</td>
 				</tr>
 				{% endfor %}
 

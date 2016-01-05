@@ -9,17 +9,24 @@
 		<hr>
 		<thead>
 			<tr>
-				<th><i class="fa fa-user"></i>Nombres</th>
-				<th><i class="fa fa-adjunst"></i>Direccion</th>
-				<th><i class="fa fa-edit"></i>Telefono</th>
+				<th><i class="fa fa-user"></i>&nbsp;Nombres</th>
+				<th><i class="fa fa-map"></i>&nbsp;Direccion</th>
+				<th><i class="fa fa-phone"></i>&nbsp;Telefono</th>
+				<th><i class="fa fa-edit"></i>&nbsp;Acciones</th>
 			</tr>
 		</thead>
 		<tbody>
 		{% for defensoria in defensorias %}
 			<tr>
-				<td><a href="{% url 'edit_defensoria_view' defensoria.pk %}">{{defensoria.nombre}} </a></td>
+				<td>{{defensoria.nombre}}</td>
 				<td>{{defensoria.direccion}} </td>
 				<td> {{defensoria.telefono}} </td>
+				<td>
+
+				<a href="{% url 'edit_defensoria_view' defensoria.pk %}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i>editar</a>
+				<a href="" class="btn btn-danger btn-xs"><i class="fa fa-minus-square"></i>Eliminar</a>
+
+				</td>
 			</tr>
 		{% endfor %}
 
