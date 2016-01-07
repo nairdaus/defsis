@@ -16,10 +16,14 @@ urlpatterns = [
 	url(r'^editar_tipologia/(\d+)$', views.editar_tipologias_view, name = 'edit_tipologias_view'),
 	#CRUD Denuncias
 	url(r'^listar_denuncias/$', views.listar_denuncias, name = "listar_denuncias"),
+	url(r'^listar_denuncias_incom/$', views.listar_denuncias_incom, name = "listar_denuncias_incom"),
 	url(r'^registrar_denuncia/$', views.agregar_denuncia, name = "registrar_denuncia"),
 	url(r'^iniciar_denuncia/$', views.iniciar_denuncia, name = "iniciar_denuncia"),
 	url(r'^agregar_victima/(\d+)$', views.agregar_victima, name = "agregar_victima"),
 	url(r'^agregar_familiar/(\d+)$', views.agregar_familiar, name = "agregar_familiar"),
+	url(r'^agregar_denunciante/(\d+)$', views.agregar_denunciante, name = "agregar_denunciante"),
+	url(r'^agregar_denunciado/(\d+)$', views.agregar_denunciado, name = "agregar_denunciado"),
+	url(r'^completar_denuncia/(\d+)$', views.completar_denuncia, name = "completar_denuncia"),
 	#url(r'^editar_denuncias/$', views.edit_denuncia_view, name = "edit_denuncia_view"),
 	#CRUD Tipos de denuncia
 	url(r'^listar_tipos/$', views.listar_tipos_view, name = 'list_tipos_view'),

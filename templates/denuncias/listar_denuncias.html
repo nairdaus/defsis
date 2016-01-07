@@ -22,7 +22,11 @@
 					<td>{{denuncia.codigo_dna}}</td>
 					<td>{{denuncia.f_denuncia}}</td>
 					<td>{{denuncia.tipologia}}</td>
-					<td><a href="{% url 'agregar_actuacion' denuncia.pk %}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i>&nbsp;Revisar</a> </td>
+					{% if denuncia.completa %}
+						<td><a href="{% url 'agregar_actuacion' denuncia.pk %}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i>&nbsp;Revisar</a> </td>
+					{% else %}
+						<td><a href="{% url 'completar_denuncia' denuncia.pk %}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i>&nbsp;Completar</a> </td>
+					{% endif %}
 				</tr>
 				{% endfor %}
 

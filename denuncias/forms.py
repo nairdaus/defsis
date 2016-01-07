@@ -9,6 +9,9 @@ from models import Actuaciones, Defensoria, Estado, Tipologia, Tipo, Persona, De
 class DateInput(forms.DateInput):
     input_type = 'date'
 
+class CheckboxInput(forms.CheckboxInput):
+	input_type = 'checkbox'
+
 class DenunciaForm(forms.ModelForm):
 	class Meta:
 		model = Denuncia
@@ -23,6 +26,10 @@ class DenunciaForm(forms.ModelForm):
             'historia': Textarea(),
         }
 
+class DomicilioForm(forms.ModelForm):
+	class Meta:
+		fields = {'domicilio', 'telefono'}
+
 class VictimaForm(forms.ModelForm):
 	class Meta:
 		model = Persona
@@ -35,6 +42,7 @@ class VictimaForm(forms.ModelForm):
 		widgets = {
 			'f_nac': DateInput(),
 		}
+
 class FamiliarForm(forms.ModelForm):
 	class Meta:
 		model = Persona
@@ -42,11 +50,16 @@ class FamiliarForm(forms.ModelForm):
 		widgets = {
 			'f_nac': DateInput(),
 		}
-#class DenuncianteForm(forms.ModelForm):
-#	pass
-#class DenunciadoForm(forms.ModelForm):
-#	pass
 
+class DenuncianteForm(forms.ModelForm):
+	class Meta:
+		model = Persona
+		fields = {'nombres','apellidos','parentesco','cedula','lugar_trabajo','ocupacion'}
+
+class DenunciadoForm(forms.ModelForm):
+	class Meta:
+		model = Persona
+		fields = {'nombres','apellidos','parentesco','lugar_trabajo','ocupacion'}
 
 class DefensoriasForm(forms.ModelForm):
 	class Meta:

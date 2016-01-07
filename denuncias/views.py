@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from datetime import date, timedelta, datetime
 
-from .forms import DefensoriasForm, EstadoForm, TipologiaForm, TipoForm, ActuacionFormModel, DenunciaForm, VictimaForm, FamiliarForm
+from .forms import DefensoriasForm, EstadoForm, TipologiaForm, TipoForm, ActuacionFormModel, DenunciaForm, VictimaForm, FamiliarForm, DenuncianteForm, DenunciadoForm
 from models import Denuncia, Defensoria, Estado, Tipologia, Persona, Tipo, PerfilPersona, Domicilio, LogEstado, Actuaciones
 
 
@@ -118,12 +118,14 @@ def agregar_denuncia(request):
 	tipologias = Tipologia.objects.all()
 	template = 'denuncias/agregar_denuncia.html'
 	return render(request, template, {'tipologias': tipologias})
-
+#Empezamos la denuncia fraccionada ingresando inicialmente los datos de la denuncia
+#y las acciones inmediatos a seguir
 @login_required(login_url = '/usuarios/')
 def iniciar_denuncia(request):
 	if request.method == 'POST':
 		form_denu = DenunciaForm(request.POST)
 		if form_denu.is_valid():
+			estado = Estado.objects.get(nombre = 'Recepcion de la Denuncia')
 			denuncia = form_denu.save(commit = False)
 			denuncia.completa = False
 			denuncia.inhabilitado = False
@@ -131,6 +133,8 @@ def iniciar_denuncia(request):
 			denuncia.save()
 			denuncia.usuarios.add(request.user)
 			denuncia.save()
+
+			logEstado = LogEstado(activo = True, estado = estado, denuncia = denuncia)
 			return HttpResponseRedirect('/denuncias/agregar_victima/%s' %denuncia.id)
 	else:
 		form_denu = DenunciaForm()
@@ -161,6 +165,7 @@ def agregar_victima(request, id_denuncia):
 		'form': form_victima,
 	}
 	return render(request, template, datos)
+
 @login_required(login_url = '/usuarios/')
 def agregar_familiar(request, id_denuncia):
 	if request.method == 'POST':
@@ -185,6 +190,61 @@ def agregar_familiar(request, id_denuncia):
 	}
 	return render(request, template, datos)
 
+@login_required(login_url = '/usuarios/')
+def agregar_denunciante(request, id_denuncia):
+	if request.method == 'POST':
+		form_denunciante = DenuncianteForm(request.POST)
+		if form_denunciante.is_valid():
+			denunciante = form_denunciante.save()
+			tipo_denunciante = Tipo.objects.get(tipo = "Denunciante")
+			denuncia = Denuncia.objects.get(id = id_denuncia)
+			persona = PerfilPersona(
+					activo = True,
+					tipo = tipo_denunciante,
+					persona = denunciante,
+					denuncia = denuncia,
+				)
+			persona.save()
+			return HttpResponseRedirect('/denuncias/agregar_denunciado/%s' %id_denuncia)
+	else:
+		form_denunciante = DenuncianteForm()
+	template = 'denuncias/agregar_denunciante.html'
+	datos = {
+		'form': form_denunciante,
+	}
+	return render(request, template, datos)
+
+@login_required(login_url = '/usuarios/')
+def agregar_denunciado(request, id_denuncia):
+	if request.method == 'POST':
+		form_denunciado = DenunciadoForm(request.POST)
+		if form_denunciado.is_valid():
+			denunciado = form_denunciado.save()
+			tipo_denunciado = Tipo.objects.get(tipo = "Denunciado")
+			denuncia = Denuncia.objects.get(id = id_denuncia)
+			persona = PerfilPersona(
+					activo = True,
+					tipo = tipo_denunciado,
+					persona = denunciado,
+					denuncia = denuncia,
+				)
+			persona.save()
+			denuncia.completa = True
+			denuncia.save() 
+			return HttpResponseRedirect('/denuncias/listar_denuncias/')
+	else:
+		form_denunciado = DenunciadoForm()
+	template = 'denuncias/agregar_denunciado.html'
+	datos = {
+		'form': form_denunciado,
+	}
+	return render(request, template, datos)
+
+@login_required(login_url = '/usuarios/')
+def completar_denuncia(request, id_denuncia):
+	denuncia = Denuncia.objects.get(id = id_denuncia)
+	template = 'denuncias/completar_denuncia.html'
+	return render(request,template)
 #	formato_fecha = '%Y-%m-%d'
 #	
 #	tipo_victima = Tipo.objects.get(tipo = "Victima")
@@ -445,7 +505,13 @@ def agregar_familiar(request, id_denuncia):
 
 @login_required(login_url = '/usuarios/')
 def listar_denuncias(request):
-	denuncias = Denuncia.objects.filter(usuarios = request.user)
+	denuncias = Denuncia.objects.filter(usuarios = request.user, completa = True)
+	template = 'denuncias/listar_denuncias.html'
+	return render(request, template, {'denuncias':denuncias})
+
+@login_required(login_url = '/usuarios/')
+def listar_denuncias_incom(request):
+	denuncias = Denuncia.objects.filter(usuarios = request.user, completa = False)
 	template = 'denuncias/listar_denuncias.html'
 	return render(request, template, {'denuncias':denuncias})
 
