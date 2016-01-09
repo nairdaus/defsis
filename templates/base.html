@@ -10,26 +10,20 @@
 	<meta name="keyword" content="Defensoria">
 
 	<title>Proyecto Defensoria</title>
-	{% load staticfiles %}
+
 	<!-- Bootstrap core CSS -->
 	<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
 	<!--external css-->
 	<link href= "{% static "font-awesome/css/font-awesome.css" %}" rel="stylesheet" />
-	<link href="{% static "js/fullcalendar/bootstrap-fullcalendar.css" %}" rel="stylesheet" />
-
-	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-datetimepicker.min.css" %}" />
+	<!-- <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-datetimepicker.min.css" %}" />
 	<link rel="stylesheet" type="text/css" href="{% static "css/daterangepicker.css" %}" />
+	<link href="{% static "gritter/css/jquery.gritter.css" %}" />
+	<link href="{% static "gritter/css/jquery.gritterO.css" %}" /> -->
 	<!-- Custom styles for this template -->
 	<link href="{% static "css/style.css" %} " rel="stylesheet">
 	<link href="{% static "css/style-responsive.css" %} " rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="{% static "css/custom.css" %}">
-
-<<<<<<< HEAD
-=======
-	<link href="{% static "font-awesome/css/font-awesome.css" %}" rel="stylesheet" />
-	<link href="{% static "js/fullcalendar/bootstrap-fullcalendar.css" %}" rel="stylesheet" />
->>>>>>> origin/frontdev
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" %}"></script>
@@ -56,8 +50,8 @@
 	
 	<!--footer end-->
 	<script src="{% static "js/jquery.js"%}" ></script>
-<<<<<<< HEAD
 	<script src="{% static "js/gritter/js/jquery.gritter.js" %}"></script>
+	
 	<script>
     $(document).on("ready", function () {
 		var contador = 0;
@@ -72,17 +66,11 @@
 			clone.find("#estudia").attr("id", "estudia"+contador);
 			clone.find("#ucurso").attr("id", "ucurso"+contador);
 			clone.find("#fnac").attr("id", "fnac"+contador);
-			$(clone).removeClass("datosNA").addClass("datosNA"+contador);
-			$('#buttonFormNA').before(clone);
-		});
-		$('#botonDir').on('click', function(){
-			contador = contador+1;
-			var clone = $( ".datosDir" ).clone();
 			clone.find("#domiciliodir").attr("id", "domiciliodir"+contador);
 			clone.find("#telefonodir").attr("id", "telefonodir"+contador);
 			clone.find("#domiciliocomunidaddir").attr("id", "domiciliocomunidaddir"+contador);
-			$(clone).removeClass("datosDir").addClass("datosDir"+contador);
-			$('#botonDir').before(clone);
+			$(clone).removeClass("datosNA").addClass("datosNA"+contador);
+			$('#buttonFormNA').before(clone);
 		});
 		$('#botonGF').on('click', function(){
 			contador = contador+1;
@@ -124,12 +112,14 @@
 		});
 	});
     </script>
-=======
-	
-	<!-- funciones javascript -->
-	<script src="{% static "js/funcionesCustom.js" %}"></script>
+    <script>
+		$(document).on("ready", function () {
+			$('#cont').on('click', function () {
+				$('#cont_noti').hide()
+			});
+		});
+	</script>
 
->>>>>>> origin/frontdev
 	<!-- js placed at the end of the document so the pages load faster -->
 	<script src="{% static "js/jquery.js" %}"></script>
 	<script src="{% static "js/bootstrap.min.js" %}"></script>
@@ -141,12 +131,8 @@
 	<!--common script for all pages-->
 	<script src="{% static "js/common-scripts.js" %}"></script>
 
-	<!-- calendario -->
-	<script src="{% static "js/fullcalendar/fullcalendar.min.js" %}"></script> 
-	<script src="{% static "js/calendar-conf-events.js" %}"></script>
-
 	<!--script for this page-->
-	<script src="{% static "js/jquery-ui.custom.min.js" %}"></script>
+	<script src="{% static "js/jquery-ui-1.9.2.custom.min.js" %}"></script>
 
 	<!--custom switch-->
 	<script src="{% static "js/bootstrap-switch.js" %}"></script>
@@ -154,19 +140,6 @@
 	<!--custom tagsinput-->
 	<script src="{% static "js/jquery.tagsinput.js" %}"></script>
 
-	<script src="{% static "js/bootstrap-inputmask/bootstrap-inputmask.min.js" %}"></script>
-
-	<script src="{% static "js/form-component.js" %}"></script>
-	
-<<<<<<< HEAD
-
-
-	 <!--LOGIN BACKSTRETCH-->
     <script type="text/javascript" src="{% static "js/jquery.backstretch.min.js" %}"></script>
-=======
-	<!--LOGIN BACKSTRETCH-->
-    <script type="text/javascript" src="{% static "js/jquery.backstretch.min.js" %}"></script>
-    <script src="{% static "js/fullcalendar/fullcalendar.min.js" %}"></script>
->>>>>>> origin/frontdev
 </body>
 </html>

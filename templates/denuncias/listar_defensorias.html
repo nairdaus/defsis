@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="content-panel">
+	<div class="col-lg-12">
+		<table class="table tablestriped table-hover">
+			<h4>
+				<li class="fa fa-angle-circle">Defensorias</li>{% csrf_token %}
+			</h4>
+			{% if defensorias %}
+			<hr>
+			<thead>
+				<tr>
+					<th><i class="fa fa-user"></i> Nombres</th>
+					<th><i class="fa fa-map-marker"></i> Direccion</th>
+					<th><i class="fa fa-phone"></i> Telefono</th>
+					<th><i class="fa fa-edit"></i> Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for defensoria in defensorias %}
+				<tr>
+					<td>{{defensoria.nombre}}</td>
+					<td>{{defensoria.direccion}}</td>
+					<td>{{defensoria.telefono}}</td>
+					<td>
+						<a href="{% url 'edit_defensoria_view' defensoria.pk %}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> editar</a>
+						<a href="" class="btn btn-danger btn-xs"><i class="fa fa-minus-square"></i> Eliminar</a>
+					</td>
+				</tr>
+			{% endfor %}
+		
+			{% else %}
+			<li>No existen defensorias registradas aun</li>
+			{% endif %}
+			</tbody>
+		</table>
+		<a href="{% url 'agregar_defensoria' %}" class="btn btn-theme">Nueva Defensoria</a>
+	</div>
+</div>
+{% endblock %}

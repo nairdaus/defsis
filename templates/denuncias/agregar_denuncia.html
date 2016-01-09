@@ -1,0 +1,332 @@
+{% extends "base.html" %}
+{% block contenido %}
+<!--main content start-->
+		<form action="/denuncias/guardar_denuncia/" class="form" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<!-- DATOS BASICOS -->
+			<div class="row content-panel">
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<div class="form-inline">
+						<div class="form-group col-sm-3 col-md-3">
+							<label class="control-label">Fecha</label>
+							<br>
+							<input name="date_form" type="date" class="form-control">
+						</div>
+						<div class="form-group col-sm-3 col-md-3">
+							<label class="control-label">Codigo DNA</label>
+							<br>
+							<input name="codigo_dna" type="text" class="form-control" placeholder="99999999">
+						</div>
+						<div class="form-group col-sm-3 col-md-3">
+							<label class="control-label">Nro. Atencion</label>
+							<br>
+							<input name="nro_atencion" type="text" class="form-control" placeholder="99999999">
+						</div>
+						<div class="form-group col-sm-3 col-md-3">
+							<label class="control-label">Tipologia</label>
+							<br>
+							<select name="tipologia" class="form-control">
+								{% for tipologia in tipologias %}
+								<option value="{{tipologia.id}}" > {{ tipologia.nombre }} </option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- DATOS BASICOS -->
+			
+			<!-- FORMULARIO DATOS DEL NIÑO, NIÑA O ADOLECENTE -->
+			<div class="row mt">
+				<div class="col-lg-12">
+					<div class="form-panel form-inline">
+						<h4 class="mb">
+							<i class="fa fa-angle-right"></i> Datos del niño, niña o adolecente
+						</h4>
+						<div class="datosNA" role="form">
+							<div class="row">
+								<div class="form-group col-md-3">
+									<br>
+									<input type="text" id="nombres" name="nombres" placeholder="Nombres">
+								</div>
+								<div class="form-group col-md-3">
+									<br>
+									<input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos">
+								</div>
+								<div class="form-group col-md-3">
+									<div class="col-sm-2 text-center">Gestante
+										<input type="checkbox" id="gestante" name="gestante" checked="" data-toggle="switch" />
+									</div>
+								</div>
+								<div class="form-group col-md-3">
+									<br>
+									<select id="sexo" name="sexo" class="form-control">
+										<option value="M">Masculino</option>
+										<option value="F">Femenino</option>
+									</select>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="form-group col-md-3">
+								  <div class="col-sm-2 text-center">Certificado Nacimiento
+									  <input type="checkbox" id="cernac" name="cernac" checked="" data-toggle="switch" />
+								  </div>
+								</div>
+								<div class="form-group col-md-3">
+									<br>
+									<div class="col-sm-2 text-center">Estudia
+										<input type="checkbox" id="estudia" name="estudia" checked="" data-toggle="switch" />
+									</div>
+								</div>
+								<div class="form-group col-md-3">
+									<br>
+									<br>
+									<select id="ucurso" name="ucurso" class="form-control">
+										<option>Ultimo Curso</option>
+										<option>Secundaria</option>
+										<option>Primaria</option>
+									</select>
+								</div>
+								<div class="form-group col-sm-12 col-md-3 col-lg-3">
+									<br>
+									Fecha de Nacimiento
+									<input type="date" id="fnac" name="fnac" class="form-control" id="fechaNac">
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" id="domiciliodir" name="domicilio" placeholder="Domicilio">
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" id="telefonodir" name="telefono" placeholder="Telefono">
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" id="domiciliocomunidaddir" name="domiciliocomunidaddir" placeholder="Domicilio Y/O Comunidad">
+								</div>
+							</div>
+						</div>
+						<button id="buttonFormNA" type="button" class="btn btn-theme btn-position">Agregar Nuevo</button>
+
+						<!--<div class="datosDir">
+							<div class="row">
+								<div class="form-group col-md-3">
+									<input type="email" class="form-control" id="domiciliodir" name="domicilio" placeholder="Domicilio">
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" id="telefonodir" name="telefono" placeholder="Telefono">
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" id="domiciliocomunidaddir" name="domiciliocomunidaddir" placeholder="Domicilio Y/O Comunidad">
+								</div>
+							</div>
+							<hr>
+						</div>
+						<button id="botonDir" type="button" class="btn btn-theme btn-position">Agregar Nuevo</button>-->
+					</div><!-- /form-panel -->
+				</div>
+			</div>
+			<!-- FORMULARIO DATOS DEL NIÑO, NIÑA O ADOLECENTE-->
+				  
+			<!-- FORUMULARIO DATOS DEL GRUPO FAMILIAR -->
+			<div class="row mt">
+				<div class="col-lg-12 row mt">
+					<div class="form-panel form-inline">
+						<h4 class="mb"><i class="fa fa-angle-right"></i> Datos del grupo familiar</h4>
+						<div class="datosGF">
+							<div class="row">
+								<div class="form-group col-md-3">
+									<br/>
+									<input type="text" class="form-control" id="nombresgf" name="nombresgf" placeholder="Nombres">
+								</div>
+								<div class="form-group col-md-3">
+									<br/>
+									<input type="text" class="form-control" id="apellidosgf" name="apellidosgf" placeholder="Apellidos">
+								</div>
+								<div class="form-group col-md-3">
+									<br/>
+									<input type="text" class="form-control" id="parentescogf" name="parentescogf" placeholder="Parentesco">
+								</div>
+								<div class="form-group col-md-3">
+									<p>Fecha de nacimiento</p>
+									<input type="date" class="form-control" id="edadgf" name="edadgf" placeholder="Edad">
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="form-group col-md-3">
+									<select id="sexogf" name="sexogf" class="form-control">
+										<option value="M">Masculino</option>
+										<option value="F">Femenino</option>
+									</select>
+								</div>
+								<div class="form-group col-md-3">
+								  <select id="gradogf" name="gradogf" class="form-control">
+									<option>Grado de Instruccion</option>
+									<option>Primario</option>
+									<option>Secundario</option>
+									<option>Licenciatura</option>
+									<option>Post Grado</option>
+								  </select>
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" id="ocupaciongf" name="ocupaciongf" placeholder="Ocupacion">
+								</div>
+							</div>
+							<hr>
+						</div>
+						<button id="botonGF" type="button" class="btn btn-theme btn-position">Agregar Nuevo</button>
+					</div>
+				</div>
+			</div>
+			<!-- FORUMULARIO DATOS DEL GRUPO FAMILIAR -->
+			
+			<!-- FORMULARIO DATOS DEL DENUNCIANTE -->
+			<div class="row mt">
+				<div class="col-lg-12">
+				  <div class="form-panel form-inline">
+						<h4 class="mb"><i class="fa fa-angle-right"></i> Datos del Denunciante</h4>
+						<div class="datosDen" role="form">
+							<div class="row">
+								<div class="form-group col-md-3">
+									<p>Anonimo</p>
+								   <input type="checkbox" id="cernac" name="anonimo" checked="true" data-toggle="switch" />
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" name = "dennombre" id="nombres" placeholder="Nombres">
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" name = "denapellidos" id="apellidos" placeholder="Apellidos">
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" name = "denparentesco" id="parentesco" placeholder="Parentesco">
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" name = "dencedula" id="cedula" placeholder="Cedula">
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" name = "dendomicilio" id="domiciliocomunidad" placeholder="Domicilio / Zona / Comunidad">
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" name = "dentelefono" id="telefono" placeholder="Telefono">
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" name = "dentrabajo" id="lugardetrabajo" placeholder="Lugar de Trabajo">
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" name = "denocupacion" id="ocupacion" placeholder="Ocupacion">
+								</div>
+							</div>
+							<br>
+						</div>
+				  </div>
+				</div>
+			</div>
+		
+				  
+			<!-- FORMULARIO DATOS DEL DENUNCIADO -->
+			<div class="row mt">
+				<div class="col-lg-12">
+					<div class="form-panel form-inline">
+						<h4 class="mb"><i class="fa fa-angle-right"></i>Datos del Denunciado</h4>
+						<div class="datosDenunciado">
+							<div class="row">
+								<div class="checkbox col-md-3">
+									Se Desconoce
+									<input type="checkbox" id="cernac" name="identdciado" checked="" data-toggle="switch" />			
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" id="nombredciado" name="nombredciado" placeholder="Nombres">
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" id="apellidodciado" name="apellidodciado" placeholder="Apellidos">
+								</div>
+								<div class="form-group col-md-3">
+									<select id="sexodciado" name="sexodciado" class="form-control">
+										<option value = "M">Masculino</option>
+										<option value = "F">Femenino</option>
+									</select>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="form-group col-md-3">
+									<p>Fecha de nacimiento</p>
+									<input type="date" class="form-control" id="edaddciado" name="edaddciado" placeholder="Edad">
+								</div>
+								<div class="form-group col-md-3">
+									<br>
+									<input type="text" class="form-control" id="parentescoddciado" name="parentescodciado" placeholder="Parentesco">
+								</div>
+								<div class="form-group col-md-3">
+									<br>
+									<input type="text" class="form-control" id="domiciliodciado" name="domiciliodciado" placeholder="Domicilio / Zona / Comunidad">
+								</div>
+								<div class="form-group col-md-3">
+									<br>
+									<input type="text" class="form-control" id="telefonodciado" name="telefonodciado" placeholder="Telefono">
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" id="trabajodciado" name="trabajodciado" placeholder="Lugar de Trabajo">
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" id="ocupaciondciao" name="ocupaciondciado" placeholder="Ocupacion">
+								</div>
+								<div class="checkbox col-md-3">
+									<label>
+										<input name = "denunciadciado" type="checkbox" id="denuncias" value="">
+										Denuncias Anteriores
+									</label>
+								</div>
+								<div class="form-group col-md-3">
+									<input type="text" class="form-control" id="lugardeno" name="lugardciado" placeholder="Donde fue denunciado">
+								</div>
+							</div>
+							<br>
+						</div>
+						<button id="botonDenunciado" type="button" class="btn btn-theme btn-position">Agregar Nuevo</button>
+					</div><!-- /form-panel -->
+				</div>
+			</div>
+			<!-- FORMULARIO DATOS DEL DENUNCIADO -->
+			
+			<!-- FORMULARIO DESCRIPCION DE LA DENUNCIA -->
+			<div class="row mt">
+				<div class="col-lg-12">
+				  <div class="form-panel form-inline">
+						<h4 class="mb"><i class="fa fa-angle-right"></i>Descripciones</h4>
+						<div class="form-group col-sm-12 col-md-12">
+							<textarea name="descdenuncia" id="" cols="50" rows="5" placeholder="Descripcion de la denuncia"></textarea>
+						</div>
+						<div class="checkbox col-sm-12 col-md-12">
+							<label>
+								<input name="opinion" type="checkbox" value="">
+								Durante la denuncia el niño, niña o adolecente manifesto su opinion
+							</label>
+						</div>
+						<div class="form-group col-sm-12 col-md-12">
+							<textarea name="histodenun" id="" cols="50" rows="5" placeholder="Dinamica familiar e historia del niño, niña o adolecente"></textarea>
+						</div>
+			
+						<div class="form-group col-sm-12 col-md-12 acciones">
+							<input type="text" class="form-control  input-size" id="acciones" name="acciones" placeholder="acciones inmediatas a seguir">
+							<hr>
+						</div>
+						<button id="botonAc" type="button" class="btn btn-theme btn-position">Agregar Nuevo</button>
+				  </div><!-- /form-panel -->
+				</div>
+			</div>
+			<!-- FORMULARIO DESCRIPCION DE LA DENUNCIA -->
+			<button id="botonForm" type="submit" class="btn btn-theme btn-position">Guardar denuncia</button>
+		</form>  
+{% endblock %}

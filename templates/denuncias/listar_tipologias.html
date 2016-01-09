@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="content-panel">
+	<div class="col-lg-12">
+		<table class="table tablestriped table-hover">
+			<h4>
+				<li class="fa fa-angle-circle">Estado de las Tipologias</li>{% csrf_token %}
+			</h4>
+			{% if tipologias %}
+			<hr>
+			<thead>
+				<tr>
+					<th><i class="fa fa-user"></i>&nbsp;Nombres</th>
+					<th class="col-md-4"></th>
+					<th><i class="fa fa-edit"></i>&nbsp;Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for tipologia in tipologias %}
+				<tr>
+					<td>
+					{{tipologia.nombre}}
+					</td>
+					<td class="col-md-4"></td>
+					<td>
+						<a href="{% url 'edit_tipologias_view' tipologia.pk  %}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Editar</a>
+						<a href="" class="btn btn-danger btn-xs"><i class="fa fa-minus-square"></i> Eliminar</a>
+					</td>
+				</tr>
+				{% endfor %}
+
+				{% else %}
+				<li>No existen Tipologias registrados aun</li>
+				{% endif %}
+			</tbody>
+		</table>
+		<a href="{% url 'agregar_tipologias_view' %}" class="btn btn-theme">Nueva Tipologia</a>
+
+	</div>
+</div>
+{% endblock %}
